@@ -2,13 +2,13 @@
 https://www.codewars.com/kata/526a569ca578d7e6e300034e
 """
 
-def bin2dec(data: str):
+def bin2dec(data: str) -> str:
     dec = 0
     for i, d in enumerate(data[::-1]):
         dec += int(d) * (2**i)
-    return dec
+    return str(dec)
 
-def dec2bin(data):
+def dec2bin(data: str) -> str:
     arr = []
     data = int(data)
     while True:
@@ -61,7 +61,7 @@ def value2char(base: str):
 # print(ConversionBase.hex)
 
 
-def dec2any(data: str, target: ConversionBase):
+def dec2any(data: str, target: ConversionBase) -> str:
     print(f"{data=}, {target=}")
 
     _map = value2char(target)
@@ -84,7 +84,7 @@ def dec2any(data: str, target: ConversionBase):
     return "".join(arr[::-1])
 
 
-def any2dec(data: str, source: ConversionBase):
+def any2dec(data: str, source: ConversionBase) -> str:
     print(f"{data=}, {source=}")
 
     _map = char2value(source)
@@ -97,7 +97,7 @@ def any2dec(data: str, source: ConversionBase):
     for i, d in enumerate(data[::-1]):
         print(f"{i=}, {d=}, {(base_value**i)=}")
         output += _map.get(d) * (base_value**i)
-    return output
+    return str(output)
 
 
 def convert(input, source, target):
